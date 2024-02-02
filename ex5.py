@@ -15,12 +15,11 @@ def search(arr, x):
         if arr[i] == x:
             return i
  
-    return -1
+    return "not found"
 
 
 def binary_search(arr, low, high, x):
  
-    # Check base case
     if high >= low:
  
         mid = (high + low) // 2
