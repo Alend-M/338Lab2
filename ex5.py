@@ -7,6 +7,8 @@
 #       a. Pick a random element in the vector
 #       b. Measure the time it takes to find the element using timeit, using 100
 #       iterations (number=100)
+arr = [6,9,4,2,0]
+
 
 def search(arr, x):
  
@@ -15,7 +17,7 @@ def search(arr, x):
         if arr[i] == x:
             return i
  
-    return "not found"
+    return "Not Found"
 
 
 def binary_search(arr, low, high, x):
@@ -28,8 +30,7 @@ def binary_search(arr, low, high, x):
         if arr[mid] == x:
             return mid
  
-        # If element is smaller than mid, then it can only
-        # be present in left subarray
+        # If element is smaller than mid, then it can only be present in left subarray
         elif arr[mid] > x:
             return binary_search(arr, low, mid - 1, x)
  
@@ -39,4 +40,7 @@ def binary_search(arr, low, high, x):
  
     else:
         # Element is not present in the array
-        return -1
+        return "Not Found"
+    
+print(search(arr, 2))
+print(binary_search(arr, 0, len(arr)-1, 6))
