@@ -10,6 +10,9 @@
 
 import timeit
 import random
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import curve_fit
 
 
 def search(arr, x):
@@ -34,7 +37,6 @@ def binary_search(arr, low, high, x):
             return binary_search(arr, low, mid - 1, x)
         else:
             return binary_search(arr, mid + 1, high, x)
- 
     else:     
         return "not found"
 
