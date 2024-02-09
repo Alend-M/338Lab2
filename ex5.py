@@ -1,6 +1,6 @@
 #   • In this exercise, you will implement basic search algorithms and attempts to
 #   confirm theoretical complexity findings with empirical measures
-#   1. Implement linear search and binary search [0.5 pts]
+#   1. Implement linear search and binary search [0.5 pts] done
 #   2. Measure the performance of each on sorted vectors of 1000, 2000, 4000,
 #   8000, 16000, 32000 elements . In each case, you must do the following for
 #   1000 times, and compute the average [0.5 pts]:
@@ -20,7 +20,7 @@ def linear_search(arr, x):
         if arr[i] == x:
             return i
  
-    return "Not Found"
+    return "not found"
 
 
 def binary_search(arr, low, high, x):
@@ -29,15 +29,10 @@ def binary_search(arr, low, high, x):
  
         mid = (high + low) // 2
  
-        # If element is present at the middle itself
         if arr[mid] == x:
             return mid
- 
-        # If element is smaller than mid, then it can only be present in left subarray
         elif arr[mid] > x:
             return binary_search(arr, low, mid - 1, x)
- 
-        # Else the element can only be present in right subarray
         else:
             return binary_search(arr, mid + 1, high, x)
  
